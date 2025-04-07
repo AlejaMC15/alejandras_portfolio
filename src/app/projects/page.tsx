@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Projects() {
   const projects = [
     {
@@ -27,9 +29,11 @@ export default function Projects() {
           >
             {/* Imagen */}
             <div className="relative w-full md:w-1/2">
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
+                width={600}
+                height={400}
                 className="w-full h-64 object-cover rounded-lg transition duration-300 hover:scale-110"
               />
               {/* Caja de texto flotante con borde y color llamativo */}

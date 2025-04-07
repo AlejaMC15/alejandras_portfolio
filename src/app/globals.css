@@ -1,16 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 @import "tailwindcss";
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+}
 
 :root {
   --background: #ffffff;
   /* Blanco para fondo */
   --foreground: #171717;
   /* Gris oscuro para texto */
-  --primary-color: #A7FF4D;
-  /* Verde limón */
+  --primary-color: #9B4DFF;
+  /* Morado suave */
   --secondary-color: #1E3A8A;
   /* Azul marino */
-  --accent-color: #9B4DFF;
-  /* Morado suave */
+  --accent-color: #A7FF4D;
+  /* Verde limón */
 }
 
 @theme inline {
@@ -44,8 +51,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 html {
   scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  /* IE y Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 @keyframes fadeIn {
