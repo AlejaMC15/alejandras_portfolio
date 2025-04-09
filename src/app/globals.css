@@ -1,101 +1,119 @@
+/* ================================
+   1. Fuentes
+================================ */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+/* Tailwind base */
 @import "tailwindcss";
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: var(--background);
-  color: var(--foreground);
-}
-
+/* ================================
+   2. Variables globales (modo claro y oscuro)
+================================ */
 :root {
-  --background: #ffffff;
-  /* Blanco para fondo */
-  --foreground: #171717;
-  /* Gris oscuro para texto */
-  --primary-color: #9B4DFF;
-  /* Morado suave */
-  --secondary-color: #1E3A8A;
-  /* Azul marino */
-  --accent-color: #A7FF4D;
-  /* Verde limón */
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary-color);
-  --color-secondary: var(--secondary-color);
-  --color-accent: var(--accent-color);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --background: #09101a;
+  /* Fondo principal */
+  --foreground: #f1f1f1;
+  /* Texto principal */
+  --heading-color: #80d8ff;
+  /* Títulos */
+  --subtext-color: #b0bec5;
+  /* Texto secundario */
+  --accent-color: #9B4DFF;
+  /* Acento (botones, íconos, links) */
+  --success-color: #81c784;
+  /* Mensajes de éxito */
+  --error-color: #ef5350;
+  /* Errores, advertencias */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    /* Fondo oscuro */
-    --foreground: #ededed;
-    /* Texto claro */
-    --primary-color: #A7FF4D;
-    /* Verde limón */
-    --secondary-color: #1E3A8A;
-    /* Azul marino */
-    --accent-color: #9B4DFF;
-    /* Morado suave */
+    /* Repetimos los mismos valores para evitar inconsistencias */
+    --background: #09101a;
+    --foreground: #f1f1f1;
+    --heading-color: #80d8ff;
+    --subtext-color: #b0bec5;
+    --accent-color: #ffca28;
+    --success-color: #81c784;
+    --error-color: #ef5350;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ================================
+   3. Theme tokens (opcional si usas Tailwind extendido)
+================================ */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-heading: var(--heading-color);
+  --color-subtext: var(--subtext-color);
+  --color-accent: var(--accent-color);
+  --color-success: var(--success-color);
+  --color-error: var(--error-color);
+  --font-sans: 'Poppins', sans-serif;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
-html {
-  scroll-behavior: smooth;
-  -ms-overflow-style: none;
-  /* IE y Edge */
-  scrollbar-width: none;
-  /* Firefox */
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+/* ================================
+   4. Estilos base
+================================ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    /* IE y Edge */
+    scrollbar-width: none;
+    /* Firefox */
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
+  ::-webkit-scrollbar {
+    display: none;
   }
 
-  to {
-    opacity: 1;
-    transform: scale(1);
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+    color: var(--foreground);
   }
 }
 
-.animate-fadeIn {
-  animation: fadeIn 1s ease-out forwards;
-}
+/* ================================
+   5. Utilidades
+================================ */
+@layer utilities {
+  .text-shadow-purple {
+    text-shadow: 2px 2px 5px rgba(155, 77, 255, 0.7);
+  }
 
-.animate-scaleIn {
-  animation: scaleIn 1s ease-out forwards;
-}
+  /* Animaciones */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
 
-.text-shadow-purple {
-  text-shadow: 2px 2px 5px rgba(155, 77, 255, 0.7);
-  /* Sombra morada */
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  .animate-scaleIn {
+    animation: scaleIn 1s ease-out forwards;
+  }
 }

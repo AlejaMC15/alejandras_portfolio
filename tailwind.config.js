@@ -1,16 +1,21 @@
-/** tailwind.config.js */
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: [
-        "./src/**/*.{js,jsx,ts,tsx}",
+    darkMode: 'media', // o 'class' si prefieres control manual
+    content: ["./src/**/*.{js,jsx,ts,tsx}"],
+    safelist: [
+        'shadow-navbar-light',
+        'dark:shadow-navbar-dark',
     ],
     theme: {
         extend: {
             colors: {
-                background: "#ffffff",
-                foreground: "#171717",
-                primary: "#9B4DFF",    // Morado suave (Opción A)
-                secondary: "#1E3A8A",  // Azul marino
-                accent: "#A7FF4D",     // Verde limón
+                background: 'var(--background)',
+                foreground: 'var(--foreground)',
+                heading: 'var(--heading-color)',
+                subtext: 'var(--subtext-color)',
+                accent: 'var(--accent-color)',
+                success: 'var(--success-color)',
+                error: 'var(--error-color)',
             },
             fontFamily: {
                 sans: ['Poppins', 'sans-serif'],

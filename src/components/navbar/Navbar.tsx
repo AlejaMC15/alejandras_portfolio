@@ -3,10 +3,20 @@ import NavLink from "./NavLink";
 
 export default function Navbar() {
   return (
-    <nav className="px-6 py-4 fixed top-0 left-0 right-0 w-full z-50 bg-[#09101a] shadow-[0_0_20px_rgba(0,191,255,0.4),0_0_30px_rgba(138,43,226,0.3)]">
+    <nav
+      className="px-6 py-4 fixed top-0 left-0 right-0 w-full z-50
+                 bg-background 
+                 shadow-[0_6px_12px_-2px_rgba(0,0,0,0.2)]
+                 dark:shadow-[0_6px_12px_-2px_rgba(255,255,255,0.08)]"
+    >
       <div className="max-w-screen-xl mx-auto flex justify-between items-center">
         <Link href="/" legacyBehavior>
-          <a className="text-transparent bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text font-bold text-xl hover:from-cyan-400 hover:to-pink-500 transition">
+          <a
+            className="text-transparent bg-clip-text
+                       bg-gradient-to-r from-heading to-accent
+                       font-bold text-xl transition
+                       hover:from-accent hover:to-heading"
+          >
             Alejandra Meneses Carmona
           </a>
         </Link>
