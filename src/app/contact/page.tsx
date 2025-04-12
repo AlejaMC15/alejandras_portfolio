@@ -58,7 +58,7 @@ export default function Contact() {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full p-3 border border-purple-500 rounded-lg bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300"
+            className="w-full p-3 border border-accent rounded-lg bg-transparent text-foreground placeholder-subtext focus:outline-none focus:ring-2 focus:ring-accent transition duration-300"
             placeholder="Escribe tu nombre..."
           />
         </div>
@@ -74,7 +74,7 @@ export default function Contact() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full p-3 border border-purple-500 rounded-lg bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300"
+            className="w-full p-3 border border-accent rounded-lg bg-transparent text-foreground placeholder-subtext focus:outline-none focus:ring-2 focus:ring-accent transition duration-300"
             placeholder="Tu correo electrónico..."
           />
         </div>
@@ -90,7 +90,7 @@ export default function Contact() {
             onChange={handleChange}
             required
             rows={4}
-            className="w-full p-3 border border-purple-500 rounded-lg bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300"
+            className="w-full p-3 border border-accent rounded-lg bg-transparent text-foreground placeholder-subtext focus:outline-none focus:ring-2 focus:ring-accent transition duration-300"
             placeholder="Escribe tu mensaje..."
           />
         </div>
@@ -98,16 +98,16 @@ export default function Contact() {
         <div className="mb-6">
           <button
             type="submit"
-            className="relative inline-block px-6 py-3 font-semibold text-white rounded-lg transition-all duration-300
-    bg-gradient-to-r from-blue-500 to-purple-500 shadow-[0px_0px_12px_2px_rgba(0,191,255,0.3),0px_0px_24px_4px_rgba(138,43,226,0.2)]
-    hover:shadow-[0px_0px_16px_4px_rgba(0,191,255,0.4),0px_0px_32px_6px_rgba(138,43,226,0.3)]"
+            className="relative inline-block px-6 py-3 font-semibold text-foreground rounded-lg transition-all duration-300
+            bg-gradient-to-r from-accent to-heading shadow-[0px_0px_12px_2px_rgba(255,165,0,0.3),0px_0px_24px_4px_rgba(50,50,50,0.2)]
+            hover:shadow-[0px_0px_16px_4px_rgba(255,165,0,0.4),0px_0px_32px_6px_rgba(50,50,50,0.3)]"
           >
             Send
           </button>
         </div>
 
         {status && (
-          <p className="text-center text-lg text-gray-300">{status}</p>
+          <p className="text-center text-lg text-subtext">{status}</p>
         )}
       </form>
     </section>
