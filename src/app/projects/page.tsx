@@ -39,7 +39,7 @@ export default function Projects() {
               />
               {/* Caja de texto flotante con borde y color llamativo */}
               <div
-                className={`absolute top-1/2 -translate-y-1/2 p-6 rounded-lg w-[90%] md:w-[90%] backdrop-blur-lg bg-background/60
+                className={`absolute top-1/2 -translate-y-1/2 p-6 rounded-lg w-[90%] md:w-[90%] bg-background/60
                 ${index % 2 === 0
                     ? "left-0 md:left-[90%] border-l-4 border-b-4 border-heading"
                     : "right-0 md:right-[90%] border-r-4 border-b-4 border-accent"

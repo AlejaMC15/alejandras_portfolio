@@ -1,12 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import About from "./about/page";
 import Projects from "./projects/page";
 import Contact from "./contact/page";
 import Technologies from "./technologies/page";
-
-const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-  <h2 className="text-4xl font-bold text-heading mb-6">{children}</h2>
-);
+import { TypeAnimation } from 'react-type-animation';
 
 export default function Home() {
   return (
@@ -23,10 +22,25 @@ export default function Home() {
 
             {/* Text content */}
             <div className="md:w-1/2 animate-fadeIn text-left">
-              <h1
-                className="text-4xl sm:text-5xl font-bold text-heading"
-              >
-                HI, I AM ALEJANDRA! FRONTEND DEVELOPER
+              <h1 className="text-4xl sm:text-5xl font-bold text-heading leading-tight">
+                HI, I AM ALEJANDRA! <br />
+                <TypeAnimation
+                  sequence={[
+                    "I'm a Frontend Developer", // escribe esto
+                    2000,                        // espera 2s
+                    "",                          // borra
+                    1000,                        // espera 1s
+                    "I code with passion and creativity", // escribe esto
+                    2000,
+                    "",
+                    1000,
+                    "I'm a Frontend Developer"  // vuelve al primero (loop)
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  repeat={Infinity}
+                  className="text-accent"
+                />
               </h1>
               <p className="mt-4 text-lg sm:text-xl text-foreground/80 leading-relaxed font-light tracking-wide">
                 Passionate and{" "}
@@ -68,8 +82,8 @@ export default function Home() {
           className="relative min-h-screen w-full px-8 flex items-center
                      bg-[url('/images/background-one.jpg')] bg-cover bg-center bg-no-repeat"
         >
-          <div className="relative z-10 w-full bg-background/90 backdrop-blur-sm p-4 rounded-xl">
-            <SectionTitle>About Myself</SectionTitle>
+          <div className="relative z-10 w-full p-4 rounded-xl">
+            <h2 className="text-4xl font-bold text-heading mb-6">About Myself</h2>
             <About />
           </div>
         </section>
@@ -80,8 +94,8 @@ export default function Home() {
           className="relative min-h-screen w-full px-8 flex items-center
                      bg-[url('/images/background-one.jpg')] bg-cover bg-center bg-no-repeat"
         >
-          <div className="relative z-10 w-full bg-background/90 backdrop-blur-sm p-4 rounded-xl">
-            <SectionTitle>Technologies</SectionTitle>
+          <div className="relative z-10 w-full p-4 rounded-xl">
+            <h2 className="text-4xl font-bold text-heading mb-6">Technologies</h2>
             <Technologies />
           </div>
         </section>
@@ -92,8 +106,8 @@ export default function Home() {
           className="relative min-h-screen w-full px-8 flex items-center
                      bg-[url('/images/background-one.jpg')] bg-cover bg-center bg-no-repeat"
         >
-          <div className="relative z-10 w-full bg-background/90 backdrop-blur-sm p-4 rounded-xl">
-            <SectionTitle>Projects</SectionTitle>
+          <div className="relative z-10 w-full p-4 rounded-xl">
+            <h2 className="text-4xl font-bold text-heading mb-6">Projects</h2>
             <Projects />
           </div>
         </section>
@@ -104,8 +118,8 @@ export default function Home() {
           className="relative min-h-screen w-full px-8 flex items-center
                      bg-[url('/images/background-one.jpg')] bg-cover bg-center bg-no-repeat"
         >
-          <div className="relative z-10 w-full bg-background/90 backdrop-blur-sm p-4 rounded-xl">
-            <SectionTitle>Contact</SectionTitle>
+          <div className="relative z-10 w-full p-4 rounded-xl">
+            <h2 className="text-4xl font-bold text-heading mb-6">Contact</h2>
             <Contact />
           </div>
         </section>
